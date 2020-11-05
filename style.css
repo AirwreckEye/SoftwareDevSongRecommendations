@@ -1,0 +1,17 @@
+.header {
+  position: absolute;
+  width: 1616px;
+  height: 543px;
+  left: 0px;
+  top: 0px;
+  background: rgba(104, 171, 220, 0.78);
+}
+
+.mood-section {
+  position: absolute;
+  width: 1616px;
+  height: 554px;
+  left: 0px;
+  top: 517px;
+  background: rgba(112, 128, 144, 0.54);
+}
