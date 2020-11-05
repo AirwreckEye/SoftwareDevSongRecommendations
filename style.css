@@ -1,4 +1,9 @@
-.header {
+body {
+  background-color: #dddddd;
+}
+
+header {
+  display: block;
   position: absolute;
   width: 1616px;
   height: 543px;
@@ -7,7 +12,7 @@
   background: rgba(104, 171, 220, 0.78);
 }
 
-.mood-section {
+div.mood-section {
   position: absolute;
   width: 1616px;
   height: 554px;
