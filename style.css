@@ -5,18 +5,31 @@ body {
 header {
   display: block;
   position: absolute;
-  width: 1616px;
-  height: 543px;
+  max-width: 1616px;
+  width: 100%;
+  height: 350px;
+  max-height: 100%;
   left: 0px;
   top: 0px;
   background: rgba(104, 171, 220, 0.78);
 }
 
+.horizontal-border {
+  position: absolute;
+  width: 1616px;
+  height: 20px;
+  left: 0px;
+  top: 519px;
+  background: #FFEA72;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 div.mood-section {
   position: absolute;
   width: 1616px;
-  height: 554px;
+  height: 20px;
   left: 0px;
-  top: 517px;
-  background: rgba(112, 128, 144, 0.54);
+  top: 320px;
+  background: #FFEA72;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
