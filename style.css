@@ -151,7 +151,7 @@ div.mood-section {
 #drop-down-menu2ndpge {
   width: 280px;
   height: 40px;
-  border: solid 4px gray;
+  border: solid 4px #bbb;
   margin: auto;
   display: block;
   border-radius: 5px;
@@ -161,6 +161,18 @@ div.mood-section {
 
 #search-button {
   background-color: #FFEA72;
+  border: none;
+  margin: auto;
+  border-radius: 5px;
+  display: block;
+  margin-top: 50px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#search-button2ndpge {
+  background-color: #bbb;
   border: none;
   margin: auto;
   border-radius: 5px;
