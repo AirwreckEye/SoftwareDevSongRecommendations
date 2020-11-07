@@ -1,3 +1,17 @@
+.tab-align-2ndpge{
+    margin-left:2.5em; 
+    
+}
+div.bottomright {
+  position: absolute;
+  width: 1616px;
+  height: 75px;
+  left: 0px;
+  top: 320px;
+  background: #FFEA72;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 body {
   background-color: #dddddd;
 }
@@ -45,6 +59,9 @@ header {
   background: rgba(104, 171, 220, 0.78);
 }
 
+.vertical-border{
+    
+}
 .horizontal-border {
   position: absolute;
   max-width: 1616px;
