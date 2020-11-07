@@ -11,7 +11,7 @@ body {
 .column {
   float: left;
   padding: 10px;
-  height: 300px; 
+  height: 600px; 
 }
 
 .left {
@@ -32,14 +32,30 @@ body {
 
 #column1style{
     
+  font-family: 'Andika', sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  color: gray;
+  margin-bottom: -10px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #FFEA72;
+}
+
+#column2style{
+    
   font-family: 'Galada', cursive;
   font-weight: normal;
-  font-size: 12px;
-  font color: gray;
-  margin-bottom: -20px;
+  font-size: 48px;
+    vertical-align: middle;
+  color:#FFEA72 ;
+  margin-bottom: -10px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: yellow;
+    background-color: #bbb;
+    text-align: center;
 }
+
+
+
 h1 {
   font-family: 'Galada', cursive;
   font-weight: normal;
@@ -94,6 +110,23 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+
+.vertical-line {
+  border-left: 20px solid rgba(104,171,220,0.78);
+  height: 610px;
+  position: absolute;
+  left: 25%;
+    top:300px;
+  margin-left: -3px;
+  top: 0;
+}
+
+
+
+
+
+
+
 div.mood-section {
   position: absolute;
   width: 1616px;
@@ -114,6 +147,17 @@ div.mood-section {
   border-radius: 5px;
   background: rgba(112, 128, 144, .05);
 }
+
+#drop-down-menu2ndpge {
+  width: 280px;
+  height: 40px;
+  border: solid 4px gray;
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+  background: rgba(112, 128, 144, .05);
+}
+
 
 #search-button {
   background-color: #FFEA72;
