@@ -160,7 +160,7 @@ div.mood-section {
 }
 
 
-#search-button {
+input[type=submit] {
   background-color: #FFEA72;
   border: none;
   margin: auto;
