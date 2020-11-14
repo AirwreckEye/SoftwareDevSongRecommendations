@@ -1,41 +1,77 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Mood to Music</title>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
-  <script src="displaymusic.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Mood to Music</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="displaymusic.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="row">
-  <div class="column left" id = "column1style">
-    <p>Here's some <span id="happy">classical</span> music for you...</p>   
-      <label for="moods-regen">Find A New Song</label>
-      <form>
-          <select name="moods-regen" id="moods-regen" accesskey="target">
-              <option value="test_happy.html">Happy</option>
-              <option value="sad.html">Sad</option>
-              <option value="energized.html">Energized</option>
-              <option value="chill.html">Chill</option>
-              <option value="angry.html">Angry</option>
-          </select>
-          <input id="regen" onclick="regenMood()" type="button" value="Generate"/>
-      </form>
-  </div>
-  <div class="column right" id = "column2style">
-    <h1>Song Title</h1>
-    <p style="  font-family: 'Amatic SC', cursive ">Artist Name</p>
-      <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Album Name</p>
-            <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Release Date</p>
-            <p style="  font-family: 'Andika', sans-serif;font-size: 24px"> Genre</p>
+        <div class="column left" id="column1style">
+            <p>Here's some <span id="happy">classical</span> music for you...</p>
+            <label for="moods-regen">Find A New Song</label>
+            <form>
+                <select name="moods-regen" id="moods-regen" accesskey="target">
+                    <option value="test_happy.html">Happy</option>
+                    <option value="sad.html">Sad</option>
+                    <option value="energized.html">Energized</option>
+                    <option value="chill.html">Chill</option>
+                    <option value="angry.html">Angry</option>
+                </select>
+                <input id="regen" onclick="regenMood()" type="button" value="Generate" />
+            </form>
+        </div>
+        <div class="column right" id="column2style">
+            <h1>Song Title: <span id="song"></span></h1>
+            <p style="  font-family: 'Amatic SC', cursive ">Artist Name: <span id="artist"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Album Name: <span id="album"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Release Date: <span id="release"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif;font-size: 24px">Genre: <span id="genre"></span>
+            </p>
+        </div>
+    </div>
 
 
-  </div>
-</div>
+    <div class="vertical-line"></div>
     
-    
-    <div class = "vertical-line">  </div>  
+    <script>
+        // Randomizing Music
 
-    </body>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function getRndCla() {
+            chill_music = [
+                ['Deux arabesques', 'Claude Debussy', 'N/A', '1888-1891', 'Classical'],
+                ['Le Nozze Di Figaro', 'Cesare Siepi, Vienna Philharmonic, & Wolfgang Amadeus Mozart', 'N/A', 'N/A', 'Classical'],
+                ['symphony no. 7', 'Ludwig van Beethoven', 'N/A', 'N/A', 'Classical'],
+                ['The Marriage of Figaroe', 'Wolfgang Amadeus Mozart', 'N/A', 'N/A', 'Classical'],
+                ['Valzer Dei Fiori', 'Pyotr Ilyich Tchaikovsky', 'N/A', 'N/A', 'Classical'],
+                ['Carmen: Toreador', 'Georges Bizet', 'N/A', 'N/A', 'Classical'],
+                ['String Quartet In C Minor', 'Luigi Boccherini', 'N/A', 'N/A', 'Classical'],
+                ['1812', 'Pyotr Ilyich Tchaikovsky', 'N/A', 'N/A', 'Classical'],
+                ['Radetzsky March', 'Johann Strauss I', 'N/A', 'N/A', 'Classical'],
+                ['The Hebrides', 'Felix Mendelssohn', 'N/A', 'N/A', 'Classical']
+            ];
+            return chill_music[getRndInteger(0, chill_music.length)]
+        }
+         // Displaying Happy Music
+        var cm = getRndCla();
+        document.getElementById('song').innerHTML = cm[0];
+        document.getElementById('artist').innerHTML = cm[1];
+        document.getElementById('album').innerHTML = cm[2];
+        document.getElementById('release').innerHTML = cm[3];
+        document.getElementById('genre').innerHTML = cm[4];
+    </script>
+
+</body>
+
 </html>

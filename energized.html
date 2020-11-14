@@ -1,41 +1,77 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Mood to Music</title>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
-  <script src="displaymusic.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Mood to Music</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="displaymusic.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="row">
-  <div class="column left" id = "column1style">
-    <p>Here's some <span id="happy">rap</span> music for you...</p>   
-      <label for="moods-regen">Find A New Song</label>
-      <form>
-          <select name="moods-regen" id="moods-regen" accesskey="target">
-              <option value="test_happy.html">Happy</option>
-              <option value="sad.html">Sad</option>
-              <option value="energized.html">Energized</option>
-              <option value="chill.html">Chill</option>
-              <option value="angry.html">Angry</option>
-          </select>
-          <input id="regen" onclick="regenMood()" type="button" value="Generate"/>
-      </form>
-  </div>
-  <div class="column right" id = "column2style">
-    <h1>Song Title</h1>
-    <p style="  font-family: 'Amatic SC', cursive ">Artist Name</p>
-      <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Album Name</p>
-            <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Release Date</p>
-            <p style="  font-family: 'Andika', sans-serif;font-size: 24px"> Genre</p>
+        <div class="column left" id="column1style">
+            <p>Here's some <span id="happy">rap</span> music for you...</p>
+            <label for="moods-regen">Find A New Song</label>
+            <form>
+                <select name="moods-regen" id="moods-regen" accesskey="target">
+                    <option value="test_happy.html">Happy</option>
+                    <option value="sad.html">Sad</option>
+                    <option value="energized.html">Energized</option>
+                    <option value="chill.html">Chill</option>
+                    <option value="angry.html">Angry</option>
+                </select>
+                <input id="regen" onclick="regenMood()" type="button" value="Generate" />
+            </form>
+        </div>
+        <div class="column right" id="column2style">
+            <h1>Song Title: <span id="song"></span></h1>
+            <p style="  font-family: 'Amatic SC', cursive ">Artist Name: <span id="artist"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Album Name: <span id="album"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Release Date: <span id="release"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif;font-size: 24px">Genre: <span id="genre"></span>
+            </p>
+        </div>
+    </div>
 
 
-  </div>
-</div>
+    <div class="vertical-line"></div>
     
-    
-    <div class = "vertical-line">  </div>  
+    <script>
+        // Randomizing Music
 
-    </body>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function getRndRap() {
+            ener_music = [
+                ['We Outta Here!', 'Lil Yachty ft. Young Nudy', 'Nuthin\' 2 Prove', '2018', 'Trap'],
+                ['Motorsport', 'Migos ft. Cardi B & Nicki Minaj', 'Culture II', '2018', 'Trap'],
+                ['give it to me', 'Agust D', 'Agust D', '2016', 'K-Rap'],
+                ['ELEMENT', 'Kendrick Lamar', 'DAMN.', '2017', 'Rap'],
+                ['Fire Squad', 'J.Cole', '2014 Forest Hills Drive', '2014', 'Rap'],
+                ['Pick It Up', 'Famous Dex ft. A$AP Rocky', 'Dex Meets Dexter', '2018', 'Trap'],
+                ['Good Drank', '2 Chainz ft. Quavo & Gucci Mane', 'Pretty Girls Like Trap Music', '2017', 'Trap'],
+                ['Sacrifices', 'Drake ft. 2 Chainz & Young Thug', 'More Life', '2017', 'Rap'],
+                ['Realer', 'Megan Thee Stallion', 'Fever', '2019', 'Rap'],
+                ['Apparently', 'J.Cole', '2014 Forest Hills Drive', '2014', 'Rap']
+            ];
+            return ener_music[getRndInteger(0, ener_music.length)]
+        }
+         // Displaying Happy Music
+        var em = getRndRap();
+        document.getElementById('song').innerHTML = em[0];
+        document.getElementById('artist').innerHTML = em[1];
+        document.getElementById('album').innerHTML = em[2];
+        document.getElementById('release').innerHTML = em[3];
+        document.getElementById('genre').innerHTML = em[4];
+    </script>
+
+</body>
+
 </html>
