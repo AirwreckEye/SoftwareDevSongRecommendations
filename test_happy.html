@@ -1,41 +1,80 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Mood to Music</title>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
-  <script src="displaymusic.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Mood to Music</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="displaymusic.js"></script>
+    <script src="test_happy.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="row">
-  <div class="column left" id = "column1style">
-    <p>Here's some <span>pop</span> music for you...</p>   
-      <label for="moods-regen">Find A New Song</label>
-      <form>
-          <select name="moods-regen" id="moods-regen" accesskey="target">
-              <option value="test_happy.html">Happy</option>
-              <option value="sad.html">Sad</option>
-              <option value="energized.html">Energized</option>
-              <option value="chill.html">Chill</option>
-              <option value="angry.html">Angry</option>
-          </select>
-          <input id="regen" onclick="regenMood()" type="button" value="Generate"/>
-      </form>
-  </div>
-  <div class="column right" id = "column2style">
-    <h1>Song Title</h1>
-    <p style="  font-family: 'Amatic SC', cursive ">Artist Name</p>
-      <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Album Name</p>
-            <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Release Date</p>
-            <p style="  font-family: 'Andika', sans-serif;font-size: 24px"> Genre</p>
+        <div class="column left" id="column1style">
+            <p>Here's some <span>pop</span> music for you...</p>
+            <label for="moods-regen">Find A New Song</label>
+            <form>
+                <select name="moods-regen" id="moods-regen" accesskey="target">
+                    <option value="test_happy.html">Happy</option>
+                    <option value="sad.html">Sad</option>
+                    <option value="energized.html">Energized</option>
+                    <option value="chill.html">Chill</option>
+                    <option value="angry.html">Angry</option>
+                </select>
+                <input id="regen" onclick="regenMood()" type="button" value="Generate" />
+            </form>
+        </div>
+        <div class="column right" id="column2style">
+            <h1>Song Title: <span id="h_song"></span></h1>
+            <p style="  font-family: 'Amatic SC', cursive ">Artist Name: <span id="h_artist"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Album Name: <span id="h_album"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Release Date: <span id="h_release"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif;font-size: 24px">Genre: <span id="h_genre"></span>
+            </p>
 
 
-  </div>
-</div>
-    
-    
-    <div class = "vertical-line">  </div>  
+        </div>
+    </div>
 
-    </body>
+
+    <div class="vertical-line"></div>
+
+    <script>
+        // Randomizing Music
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function getRndPop() {
+            happy_music = [
+                ['Alarm', 'Krewella', 'Alarm - Single', '2017', 'EDM'],
+                ['Want', 'Taemin', 'Want - Single', '2019', 'K-Pop'],
+                ['Magic Shop', 'BTS', 'Love Yourself: Tear', '2018', 'K-Pop'],
+                ['Viva Happy', 'Hatsune Miku', 'The Greatest Idol', '2013', 'J-Pop'],
+                ['Love Me Harder', 'Ariana Grande ft. The Weeknd', 'My Everything', '2014', 'Pop'],
+                ['Break My Heart', 'Hey Violet', 'From The Outside', '2017', 'EDM'],
+                ['All We Ever Wanted', 'Hey Violet', 'From The Outside', '2017', 'EDM'],
+                ['World\'s End Dancehall', 'Hatsune Miku ft. Megurine Luka', 'Happy Unfrain', '2010', 'J-Pop'],
+                ['Kataomoi', 'Aimer', 'Insane Dream', '2016', 'J-Pop'],
+                ['Starboy', 'The Weeknd ft. Daft Punk', 'Starboy', '2016', 'Pop']
+            ];
+            return happy_music[getRndInteger(0, happy_music.length)]
+        }
+         // Displaying Happy Music
+        var hm = getRndPop();
+        document.getElementById('h_song').innerHTML = hm[0];
+        document.getElementById('h_artist').innerHTML = hm[1];
+        document.getElementById('h_album').innerHTML = hm[2];
+        document.getElementById('h_release').innerHTML = hm[3];
+        document.getElementById('h_genre').innerHTML = hm[4];
+    </script>
+
+</body>
+
 </html>
