@@ -14,10 +14,21 @@
     </header>
     <hr class="horizontal-border">
     <div class="mood-section">
+
+      <h3>Select your mood</h3>
+      <input id="drop-down-menu" placeholder=" Mood...">
+      <button id="search-button">Generate</button>
       <label for="moods">Select your mood</label>
         <form>
         <select name="moods" id="moods" accesskey="target">
             <option value="test_happy.html">Happy</option>
+            <option value="sad.html">Sad</option>
+            <option value="energized.html">Energized</option>
+            <option value="chill.html">Chill</option>
+            <option value="angry.html">Angry</option>
+        </select>
+        <input onclick="displayMood()" type="button" value="Generate"/>
+        </form>
             <option value="page2.html">Sad</option>
             <option value="energized">Energized</option>
             <option value="chill">Chill</option>
