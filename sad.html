@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Mood to Music</title>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="displaymusic.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row">
+  <div class="column left" id = "column1style">
+    <p>Here's some <span>blues</span> music for you...</p>   
+      <label for="moods-regen">Find A New Song</label>
+      <form>
+          <select name="moods-regen" id="moods-regen" accesskey="target">
+              <option value="test_happy.html">Happy</option>
+              <option value="sad.html">Sad</option>
+              <option value="energized.html">Energized</option>
+              <option value="chill.html">Chill</option>
+              <option value="angry.html">Angry</option>
+          </select>
+          <input id="regen" onclick="regenMood()" type="button" value="Generate"/>
+      </form>
+  </div>
+  <div class="column right" id = "column2style">
+    <h1>Song Title</h1>
+    <p style="  font-family: 'Amatic SC', cursive ">Artist Name</p>
+      <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Album Name</p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Release Date</p>
+            <p style="  font-family: 'Andika', sans-serif;font-size: 24px"> Genre</p>
+
+
+  </div>
+</div>
+    
+    
+    <div class = "vertical-line">  </div>  
+
+    </body>
+</html>
