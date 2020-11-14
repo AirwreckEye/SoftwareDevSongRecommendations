@@ -160,7 +160,7 @@ div.mood-section {
 }
 
 
-input[type=submit] {
+input[type=button] {
   background-color: #FFEA72;
   border: none;
   margin: auto;
