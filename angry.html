@@ -1,41 +1,77 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Mood to Music</title>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
-  <script src="displaymusic.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Mood to Music</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="displaymusic.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="row">
-  <div class="column left" id = "column1style">
-    <p>Here's some <span id="happy">rock</span> music for you...</p>   
-      <label for="moods-regen">Find A New Song</label>
-      <form>
-          <select name="moods-regen" id="moods-regen" accesskey="target">
-              <option value="test_happy.html">Happy</option>
-              <option value="sad.html">Sad</option>
-              <option value="energized.html">Energized</option>
-              <option value="chill.html">Chill</option>
-              <option value="angry.html">Angry</option>
-          </select>
-          <input id="regen" onclick="regenMood()" type="button" value="Generate"/>
-      </form>
-  </div>
-  <div class="column right" id = "column2style">
-    <h1>Song Title</h1>
-    <p style="  font-family: 'Amatic SC', cursive ">Artist Name</p>
-      <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Album Name</p>
-            <p style="  font-family: 'Andika', sans-serif; font-size: 24px"> Release Date</p>
-            <p style="  font-family: 'Andika', sans-serif;font-size: 24px"> Genre</p>
+        <div class="column left" id="column1style">
+            <p>Here's some <span id="happy">rock</span> music for you...</p>
+            <label for="moods-regen">Find A New Song</label>
+            <form>
+                <select name="moods-regen" id="moods-regen" accesskey="target">
+                    <option value="test_happy.html">Happy</option>
+                    <option value="sad.html">Sad</option>
+                    <option value="energized.html">Energized</option>
+                    <option value="chill.html">Chill</option>
+                    <option value="angry.html">Angry</option>
+                </select>
+                <input id="regen" onclick="regenMood()" type="button" value="Generate" />
+            </form>
+        </div>
+        <div class="column right" id="column2style">
+            <h1>Song Title: <span id="song"></span></h1>
+            <p style="  font-family: 'Amatic SC', cursive ">Artist Name: <span id="artist"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Album Name: <span id="album"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif; font-size: 24px">Release Date: <span id="release"></span>
+            </p>
+            <p style="  font-family: 'Andika', sans-serif;font-size: 24px">Genre: <span id="genre"></span>
+            </p>
+        </div>
+    </div>
 
 
-  </div>
-</div>
+    <div class="vertical-line"></div>
     
-    
-    <div class = "vertical-line">  </div>  
+    <script>
+        // Randomizing Music
 
-    </body>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function getRndRock() {
+            angry_music = [
+                ['Yomi Yori', 'Imperial Circus Dead Decadence', 'Yomi Yori - Single', '2014', 'J-Metal'],
+                ['Bring Me to Life', 'Evanescence', 'Fallen', '2003', 'Hard Rock'],
+                ['Through My Blood', 'Aimer', 'Kabaneri OST', '2016', 'J-Rock'],
+                ['RE:I AM', 'Aimer', 'RE:I AM - EP', '2013', 'J-Rock'],
+                ['insane dream', 'Aimer ft. Taka', 'daydream', '2016', 'J-Rock'],
+                ['Liar', 'ONE OK ROCK', 'Niche Syndrome', '2010', 'J-Rock'],
+                ['Kazen Kankaku Dreamer', 'ONE OK ROCK', 'Niche Syndrome', '2010', 'J-Rock'],
+                ['closer', 'Aimer', 'daydream', '2016', 'J-Rock'],
+                ['Tsukiakari', 'Megpoid GUMI', 'EXIT TUNES PRESENTS GUMical from Megpoid', '2013', 'J-Rock'],
+                ['Pain', 'Three Days Grace', 'One-X', '2006', 'Rock']
+            ];
+            return angry_music[getRndInteger(0, angry_music.length)]
+        }
+         // Displaying Happy Music
+        var am = getRndRock();
+        document.getElementById('song').innerHTML = am[0];
+        document.getElementById('artist').innerHTML = am[1];
+        document.getElementById('album').innerHTML = am[2];
+        document.getElementById('release').innerHTML = am[3];
+        document.getElementById('genre').innerHTML = am[4];
+    </script>
+
+</body>
+
 </html>

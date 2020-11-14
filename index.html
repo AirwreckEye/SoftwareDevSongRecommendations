@@ -1,30 +1,33 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Mood to Music</title>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
-  <script src="displaymusic.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Mood to Music</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="displaymusic.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-      <h1>Mood to Music</h1>
-      <h2>Random music generator based on your mood</h2>  
+        <h1>Mood to Music</h1>
+        <h2>Random music generator based on your mood</h2> 
     </header>
     <hr class="horizontal-border">
     <div class="mood-section">
-      <label class="pg1" for="moods">Select your mood</label>
+        <label class="pg1" for="moods">Select your mood</label>
         <form>
-        <select name="moods" id="moods" accesskey="target">
-            <option value="test_happy.html">Happy</option>
-            <option value="sad.html">Sad</option>
-            <option value="energized.html">Energized</option>
-            <option value="chill.html">Chill</option>
-            <option value="angry.html">Angry</option>
-        </select>
-        <input id="home" onclick="displayMood()" type="button" value="Generate"/>
+            <select name="moods" id="moods" accesskey="target">
+                <option value="test_happy.html">Happy</option>
+                <option value="sad.html">Sad</option>
+                <option value="energized.html">Energized</option>
+                <option value="chill.html">Chill</option>
+                <option value="angry.html">Angry</option>
+            </select>
+            <input id="home" onclick="displayMood()" type="button" value="Generate" />
         </form>
     </div>
 </body>
+
 </html>
