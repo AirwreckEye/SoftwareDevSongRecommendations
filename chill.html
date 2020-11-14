@@ -10,15 +10,18 @@
 <body>
     <div class="row">
   <div class="column left" id = "column1style">
-    <p>Here's some <span id="genre">genre</span> music for you...</p>
-      
-      
-      
-      <p>Find a new song
-      
-      <input id="drop-down-menu2ndpge" placeholder=" Mood...">
-      <button id="search-button">Generate</button>
-      </p>
+    <p>Here's some <span id="happy">classical</span> music for you...</p>   
+      <label for="moods-regen">Find A New Song</label>
+      <form>
+          <select name="moods-regen" id="moods-regen" accesskey="target">
+              <option value="test_happy.html">Happy</option>
+              <option value="sad.html">Sad</option>
+              <option value="energized.html">Energized</option>
+              <option value="chill.html">Chill</option>
+              <option value="angry.html">Angry</option>
+          </select>
+          <input id="regen" onclick="regenMood()" type="button" value="Generate"/>
+      </form>
   </div>
   <div class="column right" id = "column2style">
     <h1>Song Title</h1>
