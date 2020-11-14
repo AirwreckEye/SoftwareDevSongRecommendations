@@ -3,7 +3,7 @@
 <head>
   <title>Mood to Music</title>
   <script src="https://code.jquery.com/jquery.min.js"></script>
-  <script src="script.js"></script>
+  <script src="displaymusic.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Andika&family=Galada&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,15 +15,15 @@
     <hr class="horizontal-border">
     <div class="mood-section">
       <label for="moods">Select your mood</label>
-        <select name="moods" id="moods">
-            <option value="happy">Happy</option>
-            <option value="sad">Sad</option>
+        <form>
+        <select name="moods" id="moods" accesskey="target">
+            <option value="test_happy.html">Happy</option>
+            <option value="page2.html">Sad</option>
             <option value="energized">Energized</option>
             <option value="chill">Chill</option>
             <option value="angry">Angry</option>
         </select>
-        <form action="page2.html">
-            <input type="submit" value="Generate"/>
+        <input onclick="displayMood()" type="button" value="Generate"/>
         </form>
     </div>
 </body>
